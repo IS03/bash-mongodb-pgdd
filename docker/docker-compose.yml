@@ -1,0 +1,54 @@
+services:
+
+
+# SERVICIO 1 - mongodb
+
+  mongodb:
+    image: mongo:7
+ 
+    container_name: mongodb
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+
+    ports:
+      - "27017:27017"
+
+    volumes:
+      - mongo_data:/data/db
+      - ../data/ejemplo.json:/data/ejemplo.json:ro
+
+
+
+# SERVICIO 2 - mongo-express
+
+  mongo-express:
+    image: mongo-express:1.0.2-20
+
+    container_name: mongo-express
+
+    depends_on:
+      - mongodb
+
+    environment:
+
+    #Credenciales para conectarse.
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
+      ME_CONFIG_MONGODB_SERVER: mongodb
+
+    #Credenciales para acceder al panel.
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: admin
+
+    ports:
+      - "8081:8081"
+
+
+
+# Volumenes
+
+volumes:
+  mongo_data: 
+

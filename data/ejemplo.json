@@ -1,0 +1,12 @@
+[
+  {
+    "nombre": "Ana",
+    "edad": 28,
+    "intereses": ["datos", "bash", "docker"]
+  },
+  {
+    "nombre": "Luis",
+    "edad": 35,
+    "intereses": ["mongodb", "cloud", "devops"]
+  }
+]
