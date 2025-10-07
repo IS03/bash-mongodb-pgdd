@@ -8,17 +8,17 @@
 
 📁 Estructura del proyecto:
 practico/
-├── init.sh
-├── README.md
-│
-├── data/
-│ └── ejemplo.json
-│
-├── scripts/
-│ └── import.sh
-│
-└── docker/
-└── docker-compose.yml
+    ├── init.sh
+    ├── README.md
+    │
+    ├── data/
+    │ └── ejemplo.json
+    │
+    ├── scripts/
+    │ └── import.sh
+    │
+    └── docker/
+    └── docker-compose.yml
 
 
 
